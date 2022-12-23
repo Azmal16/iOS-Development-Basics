@@ -1,15 +1,10 @@
-//
-//  ContentView.swift
-//  UsingForEach
-//
-//  Created by MMH on 23/12/22.
-//
 
 import SwiftUI
 
 struct ContentView: View {
     var body: some View {
         VStack {
+            //ForEach is used to loop over a sequence to create views
             ForEach((1...10).reversed(), id: \.self) {
                     Text("\($0)…")
                 }
