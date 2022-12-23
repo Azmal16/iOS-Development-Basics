@@ -6,7 +6,7 @@
 This is a beautiful egg timer app to boil your eggs to perfection depending on how you prefer your eggs. 
 
 ## How does it look:
-![alt text](https://github.com/Azmal16/iOS-Development-Basics/tree/main/EggTimer-iOS13 "EggTimer UI Demo")
+![alt text](https://github.com/Azmal16/Images/blob/master/EggTimerDemo.gif "EggTimer UI Demo")
 
 ## Concepts Used:
 
