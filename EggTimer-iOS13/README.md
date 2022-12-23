@@ -1,5 +1,5 @@
 # Egg Timer
-
+An iOS app that helps you boil your Eggs!
 
 ## What It Does:
 
