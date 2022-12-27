@@ -1,6 +1,5 @@
 # ForEach
-An iOS app that helps you boil your Eggs!
-
+An iOS app that helps you Select Your GOAT!
 ## What It Does:
 
 This tiny app demonstrates the creation of UI elements from an array of elements using ForEach Loop in SwiftUI and helps you select your GOAT!. 
