@@ -2,16 +2,18 @@
 import SwiftUI
 
 struct ContentView: View {
+    let goats = ["Messi", "Ronaldo", "Neymar", "Maradona", "Pele"]
+    @State private var selectedGoat = "Messi"
     var body: some View {
-        VStack {
-            //ForEach is used to loop over a sequence to create views
-            ForEach((1...10).reversed(), id: \.self) {
-                    Text("\($0)…")
+        NavigationView {
+            Form {
+                Picker("Select your GOAT", selection: $selectedGoat) {
+                    ForEach(goats, id: \.self) {
+                        Text($0)
+                    }
                 }
-
-                Text("Ready or not, here I come!")
+            }
         }
-        .padding()
     }
 }
 
