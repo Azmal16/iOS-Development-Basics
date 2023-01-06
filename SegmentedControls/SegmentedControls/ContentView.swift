@@ -8,16 +8,33 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var isTrue = true
+    
+    @State private var superHero = SuperHeroNames.ironMan.rawValue
+    @State private var imageName = imageNameDict[SuperHeroNames.ironMan.rawValue]
+    
     var body: some View {
         VStack {
-            Picker("What is your favorite color?", selection: $isTrue) {
-                Text("True").tag(true)
-                Text("False").tag(false)
+            Picker("", selection: $superHero) {
                 
+                ForEach(SuperHeroNames.allCases, id: \.rawValue) { option in
+                    Text(option.rawValue).tag(option)
+                }
             }
-            .pickerStyle(.segmented)
-            isTrue ? Text("True"):Text("False")
+            .pickerStyle(SegmentedPickerStyle())
+            .frame(width: 300, height: 45)
+            .padding()
+            .onChange(of: superHero) {value in
+                imageName = imageNameDict[value] ?? ""
+            }
+            
+            Spacer()
+            
+            Image(imageName ?? "")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .padding()
+            
+            Spacer()
         }
     }
 }
