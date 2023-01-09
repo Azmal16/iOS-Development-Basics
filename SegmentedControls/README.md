@@ -1,5 +1,5 @@
 # Segmented Control
-An iOS app that you select your favourite Marvel Super Hero with Segmented Controls
+An iOS app that lets you select your favourite Marvel Super Hero with Segmented Controls
 
 ## What It Does:
 
