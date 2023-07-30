@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct ContentView: View {
+struct TextInputView: View {
     
     @State private var azmalGrocery = ""
     @State private var azmalUtility = ""
@@ -70,11 +70,11 @@ struct ContentView: View {
                     .padding(.horizontal)
                     
                     Button(action: {
-                        let perHeadGroceryCost = (Int(azmalGrocery)! + Int(mridulGrocery)! + Int(nasifGrocery)!) / 4
-                        let perHeadUtilityCost = (Int(azmalUtility)! + Int(mridulUtility)! + Int(nasifUtility)!) / 3
-                        azmalAccount = Int(azmalGrocery)! - perHeadGroceryCost + Int(azmalUtility)! - perHeadUtilityCost
-                        mridulAccount = Int(mridulGrocery)! - perHeadGroceryCost + Int(mridulUtility)! - perHeadUtilityCost
-                        nasifAccount = Int(nasifGrocery)! - perHeadGroceryCost + Int(nasifUtility)! - perHeadUtilityCost
+                        let perHeadGroceryCost = (Int(azmalGrocery) ?? 0 + Int(mridulGrocery) ?? 0 + Int(nasifGrocery) ?? 0) / 4
+                        let perHeadUtilityCost = (Int(azmalUtility) ?? 0 + Int(mridulUtility) ?? 0 + Int(nasifUtility) ?? 0) / 3
+                        azmalAccount = Int(azmalGrocery) ?? 0 - perHeadGroceryCost + Int(azmalUtility) ?? 0 - perHeadUtilityCost
+                        mridulAccount = Int(mridulGrocery) ?? 0 - perHeadGroceryCost + Int(mridulUtility) ?? 0 - perHeadUtilityCost
+                        nasifAccount = Int(nasifGrocery) ?? 0 - perHeadGroceryCost + Int(nasifUtility) ?? 0 - perHeadUtilityCost
                         self.isCalculationComplete = true
                     }) {
                         Text("Calculate")
@@ -100,6 +100,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        TextInputView()
     }
 }
