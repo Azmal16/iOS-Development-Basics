@@ -87,18 +87,33 @@ struct TextInputView: View {
                     .frame(width: 350)
                     .focused($fieldIsFocused)
                     
-                    Button(action: {
-                        calculateCost()
-                        hideKeyBoard()
-                        self.isCalculationComplete = true
-                    }) {
-                        Text("Calculate")
-                            .foregroundColor(.white)
-                            .font(.headline)
-                            .padding(12)
-                            .background(Color.blue)
-                            .cornerRadius(20)
+                    HStack{
+                        Button(action: {
+                            calculateCost()
+                            hideKeyBoard()
+                        }) {
+                            Text("Calculate")
+                                .foregroundColor(.white)
+                                .font(.headline)
+                                .padding(12)
+                                .background(Color.blue)
+                                .cornerRadius(20)
+                        }
+                        
+                        Button(action: {
+                            resetToZero()
+                            hideKeyBoard()
+                        }) {
+                            Text("Reset")
+                                .foregroundColor(.white)
+                                .font(.headline)
+                                .padding(12)
+                                .background(Color.blue)
+                                .cornerRadius(20)
+                        }
                     }
+                    
+                    
                     
                     VStack {
                         HStack {
@@ -163,10 +178,24 @@ extension TextInputView {
         azmalAccount = azmalGroceryInt - perHeadGroceryCost + azmalUtilityInt - perHeadUtilityCost
         mridulAccount = mridulGroceryInt - perHeadGroceryCost + mridulUtilityInt - perHeadUtilityCost
         nasifAccount = nasifGroceryInt - perHeadGroceryCost + nasifutilityInt - perHeadUtilityCost
+        isCalculationComplete = true
     }
     
     func hideKeyBoard() {
         fieldIsFocused = false
+    }
+    
+    func resetToZero() {
+        azmalGrocery = ""
+        azmalUtility = ""
+        mridulGrocery = ""
+        mridulUtility = ""
+        nasifGrocery = ""
+        nasifUtility = ""
+        azmalAccount = 0
+        mridulAccount = 0
+        nasifAccount = 0
+        isCalculationComplete = false
     }
 }
 
