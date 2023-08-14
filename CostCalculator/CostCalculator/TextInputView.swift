@@ -176,7 +176,7 @@ extension TextInputView {
         let perHeadUtilityCost = (azmalUtilityInt + mridulUtilityInt + nasifutilityInt) / 3
         
         azmalAccount = azmalGroceryInt - perHeadGroceryCost + azmalUtilityInt - perHeadUtilityCost
-        mridulAccount = mridulGroceryInt - perHeadGroceryCost + mridulUtilityInt - perHeadUtilityCost
+        mridulAccount = mridulGroceryInt - 2 * perHeadGroceryCost + mridulUtilityInt - perHeadUtilityCost
         nasifAccount = nasifGroceryInt - perHeadGroceryCost + nasifutilityInt - perHeadUtilityCost
         isCalculationComplete = true
     }
