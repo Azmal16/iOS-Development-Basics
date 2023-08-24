@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		91B94E782A97754A0076E9E1 /* NavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B94E772A97754A0076E9E1 /* NavigationBarView.swift */; };
 		91F95F112A55B4D200C9F0F0 /* CostCalculatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F95F102A55B4D200C9F0F0 /* CostCalculatorApp.swift */; };
 		91F95F132A55B4D200C9F0F0 /* TextInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F95F122A55B4D200C9F0F0 /* TextInputView.swift */; };
 		91F95F152A55B4D300C9F0F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91F95F142A55B4D300C9F0F0 /* Assets.xcassets */; };
@@ -14,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		91B94E772A97754A0076E9E1 /* NavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarView.swift; sourceTree = "<group>"; };
 		91F95F0D2A55B4D200C9F0F0 /* CostCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CostCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91F95F102A55B4D200C9F0F0 /* CostCalculatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostCalculatorApp.swift; sourceTree = "<group>"; };
 		91F95F122A55B4D200C9F0F0 /* TextInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputView.swift; sourceTree = "<group>"; };
@@ -32,6 +34,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		91B94E762A9775010076E9E1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				91F95F122A55B4D200C9F0F0 /* TextInputView.swift */,
+				91B94E772A97754A0076E9E1 /* NavigationBarView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		91F95F042A55B4D200C9F0F0 = {
 			isa = PBXGroup;
 			children = (
@@ -51,8 +62,8 @@
 		91F95F0F2A55B4D200C9F0F0 /* CostCalculator */ = {
 			isa = PBXGroup;
 			children = (
+				91B94E762A9775010076E9E1 /* Views */,
 				91F95F102A55B4D200C9F0F0 /* CostCalculatorApp.swift */,
-				91F95F122A55B4D200C9F0F0 /* TextInputView.swift */,
 				91F95F142A55B4D300C9F0F0 /* Assets.xcassets */,
 				91F95F162A55B4D300C9F0F0 /* Preview Content */,
 			);
@@ -139,6 +150,7 @@
 			files = (
 				91F95F132A55B4D200C9F0F0 /* TextInputView.swift in Sources */,
 				91F95F112A55B4D200C9F0F0 /* CostCalculatorApp.swift in Sources */,
+				91B94E782A97754A0076E9E1 /* NavigationBarView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
