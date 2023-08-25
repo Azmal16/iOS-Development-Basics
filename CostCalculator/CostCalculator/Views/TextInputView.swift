@@ -8,15 +8,16 @@ struct TextInputView: View {
     @State private var mridulUtility = ""
     @State private var nasifGrocery = ""
     @State private var nasifUtility = ""
-    @State private var azmalAccount = 0
-    @State private var mridulAccount = 0
-    @State private var nasifAccount = 0
-    @State private var isCalculationComplete = false
+    @State  var azmalAccount = 0
+    @State  var mridulAccount = 0
+    @State  var nasifAccount = 0
+    @State  var isCalculationComplete = false
+    @State private var showResult = false
     @FocusState private var fieldIsFocused: Bool
     
     var body: some View {
         ZStack {
-            
+            Color(UIColor(red: 0.14, green: 0.17, blue: 0.17, alpha: 1.00))
             
             VStack {
                 NavigationBarView()
@@ -26,10 +27,10 @@ struct TextInputView: View {
                     .background(Color(UIColor(red: 0.83, green: 0.32, blue: 0.13, alpha: 1.00)))
                     .shadow(color: Color.black.opacity(0.05), radius: 5, x: 0, y: 5)
                 
-                ScrollView() {
+               // ScrollView() {
                     VStack(spacing: 25) {
                         Text("Azmal")
-                            .foregroundColor(.black)
+                            .foregroundColor(.white)
                             .font(.title)
                         
                         Group {
@@ -43,7 +44,7 @@ struct TextInputView: View {
                         .focused($fieldIsFocused)
                         
                         Text("Mridul")
-                            .foregroundColor(.black)
+                            .foregroundColor(.white)
                             .font(.title)
                         
                         Group {
@@ -58,7 +59,7 @@ struct TextInputView: View {
                         
                         
                         Text("Nasif")
-                            .foregroundColor(.black)
+                            .foregroundColor(.white)
                             .font(.title)
                         
                         Group {
@@ -82,10 +83,12 @@ struct TextInputView: View {
                         
                         HStack{
                             
-                            Button {
+                            Button(action: {
                                 calculateCost()
                                 hideKeyBoard()
-                            } label: {
+                                showResult.toggle()
+                            })
+                        {
                                 Text("Calculate")
                                     .padding(.horizontal, 20)
                                     .padding(.vertical, 8)
@@ -95,55 +98,20 @@ struct TextInputView: View {
                                     .foregroundColor(.black)
                                     .cornerRadius(30)
                             }
+                        .sheet(isPresented: $showResult) {
+                            ResultView(isCalculationComplete: $isCalculationComplete, azmalAccount: $azmalAccount, mridulAccount: $mridulAccount, nasifAccount: $nasifAccount)
                         }
-                        
-                        
-                        
-                        VStack {
-                            HStack {
-                                Text("Azmal")
-                                    .foregroundColor(isCalculationComplete ? .black :  Color(UIColor(red: 0.14, green: 0.17, blue: 0.17, alpha: 1.00)))
-                                Text(azmalAccount > 0 ? "gets" : "gives")
-                                    .foregroundColor(isCalculationComplete ? .black :  Color(UIColor(red: 0.14, green: 0.17, blue: 0.17, alpha: 1.00)))
-                                Text("\(abs(azmalAccount))")
-                                    .foregroundColor(isCalculationComplete ? azmalAccount > 0 ? .green : .red :  Color(UIColor(red: 0.14, green: 0.17, blue: 0.17, alpha: 1.00)))
-                                Text("Taka")
-                                    .foregroundColor(isCalculationComplete ? .black :  Color(UIColor(red: 0.14, green: 0.17, blue: 0.17, alpha: 1.00)))
-                                
-                            }
                             
-                            HStack {
-                                Text("Mridul")
-                                    .foregroundColor(isCalculationComplete ? .black :  Color(UIColor(red: 0.14, green: 0.17, blue: 0.17, alpha: 1.00)))
-                                Text(mridulAccount > 0 ? "gets" : "gives")
-                                    .foregroundColor(isCalculationComplete ? .black :  Color(UIColor(red: 0.14, green: 0.17, blue: 0.17, alpha: 1.00)))
-                                Text("\(abs(mridulAccount))")
-                                    .foregroundColor(isCalculationComplete ? mridulAccount > 0 ? .green : .red :  Color(UIColor(red: 0.14, green: 0.17, blue: 0.17, alpha: 1.00)))
-                                Text("Taka")
-                                    .foregroundColor(isCalculationComplete ? .black :  Color(UIColor(red: 0.14, green: 0.17, blue: 0.17, alpha: 1.00)))
-                            }
-                            
-                            HStack {
-                                Text("Nasif")
-                                    .foregroundColor(isCalculationComplete ? .black :  Color(UIColor(red: 0.14, green: 0.17, blue: 0.17, alpha: 1.00)))
-                                Text(nasifAccount > 0 ? "gets" : "gives")
-                                    .foregroundColor(isCalculationComplete ? .black :  Color(UIColor(red: 0.14, green: 0.17, blue: 0.17, alpha: 1.00)))
-                                Text("\(abs(nasifAccount))")
-                                    .foregroundColor(isCalculationComplete ? nasifAccount > 0 ? .green : .red :  Color(UIColor(red: 0.14, green: 0.17, blue: 0.17, alpha: 1.00)))
-                                Text("Taka")
-                                    .foregroundColor(isCalculationComplete ? .black :  Color(UIColor(red: 0.14, green: 0.17, blue: 0.17, alpha: 1.00)))
-                                
-                            }
-                        }.font(.title2)
+                        }
                         
                         Spacer()
                     }
                     .padding()
-                }
+                //}
             }
             
         }
-        .ignoresSafeArea(.all, edges: .top)
+        .ignoresSafeArea(.all, edges: .all)
     }
 }
 
