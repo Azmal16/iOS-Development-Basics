@@ -9,40 +9,33 @@ import SwiftUI
 
 struct NavigationBarView: View {
     //MARK: - PROPERTIES
-    
+    @State private var isAnimated: Bool = false
     
     //MARK: - BODY
     var body: some View {
         HStack {
-//            Button(action: {}, label: {
-//                Image(systemName: "magnifyingglass")
-//                    .font(.title)
-//                    .foregroundColor(.black)
-//            }) //: BUTTON
-            
-            Spacer()
-            Text("Cost".uppercased())
-                .font(.title2)
-                .fontWeight(.black)
-                .foregroundColor(.black)
-            
-            Image(systemName: "dollarsign.circle.fill")
-                .font(.largeTitle.weight(.black))
-                .foregroundColor(.black)
-            
-            Text("calc".uppercased())
-                .font(.title2)
-                .fontWeight(.black)
+            Image(systemName: "line.3.horizontal")
+                .resizable()
+                .frame(width: 25, height: 25)
                 .foregroundColor(.black)
             
             Spacer()
-            //dollarsign.circle.fill
-//            Button(action: {}, label: {
-//                Image(systemName: "cart")
-//                    .font(.title)
-//                    .foregroundColor(.black)
-//            }) //: BUTTON
             
+            LogoView()
+                .opacity(isAnimated ? 1 : 0)
+                .offset(x: 0, y: isAnimated ? 0 : -25)
+                .onAppear(perform: {
+                    withAnimation(.easeIn(duration: 0.5)) {
+                        isAnimated.toggle()
+                    }
+                })
+            
+            Spacer()
+            
+            Image(systemName: "arrow.counterclockwise")
+                .resizable()
+                .frame(width: 30, height: 30)
+                .foregroundColor(.black)
         } //: HSTACK
     }
 }

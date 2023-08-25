@@ -16,148 +16,134 @@ struct TextInputView: View {
     
     var body: some View {
         ZStack {
-            Color(UIColor(red: 0.14, green: 0.17, blue: 0.17, alpha: 1.00)).edgesIgnoringSafeArea(.all)
             
-            ScrollView() {
-                VStack(spacing: 25) {
-                    
-                    HStack {
-                        Image(systemName: "house")
-                            .font(.largeTitle.weight(.black))
-                            .foregroundColor(.white)
-                        VStack {
-                            Text("Cost")
-                                .foregroundColor(.white)
-                                .font(.title2)
-                            Text("Calculator")
-                                .foregroundColor(.white)
-                                .font(.title2)
+            
+            VStack {
+                NavigationBarView()
+                    .padding(.horizontal, 15)
+                    .padding(.bottom)
+                    .padding(.top, UIApplication.shared.windows.first?.safeAreaInsets.top)
+                    .background(Color(UIColor(red: 0.83, green: 0.32, blue: 0.13, alpha: 1.00)))
+                    .shadow(color: Color.black.opacity(0.05), radius: 5, x: 0, y: 5)
+                
+                ScrollView() {
+                    VStack(spacing: 25) {
+                        Text("Azmal")
+                            .foregroundColor(.black)
+                            .font(.title)
+                        
+                        Group {
+                            TextField("Enter Grocery Cost (Tk)", text: $azmalGrocery)
+                            TextField("Enter Unilty Cost (Tk)", text: $azmalUtility)
                         }
-                    }
-                    
-                    Text("Azmal")
-                        .foregroundColor(.white)
-                        .font(.title)
-                    
-                    Group {
-                        TextField("Enter Grocery Cost (Tk)", text: $azmalGrocery)
-                        TextField("Enter Unilty Cost (Tk)", text: $azmalUtility)
-                    }
-                    .keyboardType(.numberPad)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .padding(.horizontal)
-                    .frame(width: 350)
-                    .focused($fieldIsFocused)
-                    
-                    Text("Mridul")
-                        .foregroundColor(.white)
-                        .font(.title)
-                    
-                    Group {
-                        TextField("Enter Grocery Cost (Tk)", text: $mridulGrocery)
-                        TextField("Enter Unilty Cost (Tk)", text: $mridulUtility)
-                    }
-                    .keyboardType(.numberPad)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .padding(.horizontal)
-                    .frame(width: 350)
-                    .focused($fieldIsFocused)
-                    
-                    
-                    Text("Nasif")
-                        .foregroundColor(.white)
-                        .font(.title)
-                    
-                    Group {
-                        TextField("Enter Grocery Cost (Tk)", text: $nasifGrocery)
-                        TextField("Enter Unilty Cost (Tk)", text: $nasifUtility)
-                            .toolbar {
-                                ToolbarItemGroup(placement: .keyboard) {
-                                    Spacer()
-                                    Button("Done") {
-                                        hideKeyBoard()
+                        .keyboardType(.numberPad)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .padding(.horizontal)
+                        .frame(width: 350)
+                        .focused($fieldIsFocused)
+                        
+                        Text("Mridul")
+                            .foregroundColor(.black)
+                            .font(.title)
+                        
+                        Group {
+                            TextField("Enter Grocery Cost (Tk)", text: $mridulGrocery)
+                            TextField("Enter Unilty Cost (Tk)", text: $mridulUtility)
+                        }
+                        .keyboardType(.numberPad)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .padding(.horizontal)
+                        .frame(width: 350)
+                        .focused($fieldIsFocused)
+                        
+                        
+                        Text("Nasif")
+                            .foregroundColor(.black)
+                            .font(.title)
+                        
+                        Group {
+                            TextField("Enter Grocery Cost (Tk)", text: $nasifGrocery)
+                            TextField("Enter Unilty Cost (Tk)", text: $nasifUtility)
+                                .toolbar {
+                                    ToolbarItemGroup(placement: .keyboard) {
+                                        Spacer()
+                                        Button("Done") {
+                                            hideKeyBoard()
+                                        }
                                     }
                                 }
+                            
+                        }
+                        .keyboardType(.numberPad)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .padding(.horizontal)
+                        .frame(width: 350)
+                        .focused($fieldIsFocused)
+                        
+                        HStack{
+                            
+                            Button {
+                                calculateCost()
+                                hideKeyBoard()
+                            } label: {
+                                Text("Calculate")
+                                    .padding(.horizontal, 20)
+                                    .padding(.vertical, 8)
+                                    .font(.title2)
+                                    .frame(height: 44)
+                                    .background(Color(UIColor(red: 0.83, green: 0.32, blue: 0.13, alpha: 1.00)))
+                                    .foregroundColor(.black)
+                                    .cornerRadius(30)
                             }
-                        
-                    }
-                    .keyboardType(.numberPad)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .padding(.horizontal)
-                    .frame(width: 350)
-                    .focused($fieldIsFocused)
-                    
-                    HStack{
-                        Button(action: {
-                            calculateCost()
-                            hideKeyBoard()
-                        }) {
-                            Text("Calculate")
-                                .foregroundColor(.white)
-                                .font(.headline)
-                                .padding(12)
-                                .background(Color.blue)
-                                .cornerRadius(20)
                         }
                         
-                        Button(action: {
-                            resetToZero()
-                            hideKeyBoard()
-                        }) {
-                            Text("Reset")
-                                .foregroundColor(.white)
-                                .font(.headline)
-                                .padding(12)
-                                .background(Color.blue)
-                                .cornerRadius(20)
-                        }
-                    }
-                    
-                    
-                    
-                    VStack {
-                        HStack {
-                            Text("Azmal")
-                                .foregroundColor(isCalculationComplete ? .white :  Color(UIColor(red: 0.14, green: 0.17, blue: 0.17, alpha: 1.00)))
-                            Text(azmalAccount > 0 ? "gets" : "gives")
-                                .foregroundColor(isCalculationComplete ? .white :  Color(UIColor(red: 0.14, green: 0.17, blue: 0.17, alpha: 1.00)))
-                            Text("\(abs(azmalAccount))")
-                                .foregroundColor(isCalculationComplete ? azmalAccount > 0 ? .green : .red :  Color(UIColor(red: 0.14, green: 0.17, blue: 0.17, alpha: 1.00)))
-                            Text("Taka")
-                                .foregroundColor(isCalculationComplete ? .white :  Color(UIColor(red: 0.14, green: 0.17, blue: 0.17, alpha: 1.00)))
+                        
+                        
+                        VStack {
+                            HStack {
+                                Text("Azmal")
+                                    .foregroundColor(isCalculationComplete ? .black :  Color(UIColor(red: 0.14, green: 0.17, blue: 0.17, alpha: 1.00)))
+                                Text(azmalAccount > 0 ? "gets" : "gives")
+                                    .foregroundColor(isCalculationComplete ? .black :  Color(UIColor(red: 0.14, green: 0.17, blue: 0.17, alpha: 1.00)))
+                                Text("\(abs(azmalAccount))")
+                                    .foregroundColor(isCalculationComplete ? azmalAccount > 0 ? .green : .red :  Color(UIColor(red: 0.14, green: 0.17, blue: 0.17, alpha: 1.00)))
+                                Text("Taka")
+                                    .foregroundColor(isCalculationComplete ? .black :  Color(UIColor(red: 0.14, green: 0.17, blue: 0.17, alpha: 1.00)))
+                                
+                            }
                             
-                        }
-                        
-                        HStack {
-                            Text("Mridul")
-                                .foregroundColor(isCalculationComplete ? .white :  Color(UIColor(red: 0.14, green: 0.17, blue: 0.17, alpha: 1.00)))
-                            Text(mridulAccount > 0 ? "gets" : "gives")
-                                .foregroundColor(isCalculationComplete ? .white :  Color(UIColor(red: 0.14, green: 0.17, blue: 0.17, alpha: 1.00)))
-                            Text("\(abs(mridulAccount))")
-                                .foregroundColor(isCalculationComplete ? mridulAccount > 0 ? .green : .red :  Color(UIColor(red: 0.14, green: 0.17, blue: 0.17, alpha: 1.00)))
-                            Text("Taka")
-                                .foregroundColor(isCalculationComplete ? .white :  Color(UIColor(red: 0.14, green: 0.17, blue: 0.17, alpha: 1.00)))
-                        }
-                        
-                        HStack {
-                            Text("Nasif")
-                                .foregroundColor(isCalculationComplete ? .white :  Color(UIColor(red: 0.14, green: 0.17, blue: 0.17, alpha: 1.00)))
-                            Text(nasifAccount > 0 ? "gets" : "gives")
-                                .foregroundColor(isCalculationComplete ? .white :  Color(UIColor(red: 0.14, green: 0.17, blue: 0.17, alpha: 1.00)))
-                            Text("\(abs(nasifAccount))")
-                                .foregroundColor(isCalculationComplete ? nasifAccount > 0 ? .green : .red :  Color(UIColor(red: 0.14, green: 0.17, blue: 0.17, alpha: 1.00)))
-                            Text("Taka")
-                                .foregroundColor(isCalculationComplete ? .white :  Color(UIColor(red: 0.14, green: 0.17, blue: 0.17, alpha: 1.00)))
+                            HStack {
+                                Text("Mridul")
+                                    .foregroundColor(isCalculationComplete ? .black :  Color(UIColor(red: 0.14, green: 0.17, blue: 0.17, alpha: 1.00)))
+                                Text(mridulAccount > 0 ? "gets" : "gives")
+                                    .foregroundColor(isCalculationComplete ? .black :  Color(UIColor(red: 0.14, green: 0.17, blue: 0.17, alpha: 1.00)))
+                                Text("\(abs(mridulAccount))")
+                                    .foregroundColor(isCalculationComplete ? mridulAccount > 0 ? .green : .red :  Color(UIColor(red: 0.14, green: 0.17, blue: 0.17, alpha: 1.00)))
+                                Text("Taka")
+                                    .foregroundColor(isCalculationComplete ? .black :  Color(UIColor(red: 0.14, green: 0.17, blue: 0.17, alpha: 1.00)))
+                            }
                             
-                        }
-                    }.font(.title2)
-                    
-                    Spacer()
+                            HStack {
+                                Text("Nasif")
+                                    .foregroundColor(isCalculationComplete ? .black :  Color(UIColor(red: 0.14, green: 0.17, blue: 0.17, alpha: 1.00)))
+                                Text(nasifAccount > 0 ? "gets" : "gives")
+                                    .foregroundColor(isCalculationComplete ? .black :  Color(UIColor(red: 0.14, green: 0.17, blue: 0.17, alpha: 1.00)))
+                                Text("\(abs(nasifAccount))")
+                                    .foregroundColor(isCalculationComplete ? nasifAccount > 0 ? .green : .red :  Color(UIColor(red: 0.14, green: 0.17, blue: 0.17, alpha: 1.00)))
+                                Text("Taka")
+                                    .foregroundColor(isCalculationComplete ? .black :  Color(UIColor(red: 0.14, green: 0.17, blue: 0.17, alpha: 1.00)))
+                                
+                            }
+                        }.font(.title2)
+                        
+                        Spacer()
+                    }
+                    .padding()
                 }
-                .padding()
             }
             
         }
+        .ignoresSafeArea(.all, edges: .top)
     }
 }
 
