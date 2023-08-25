@@ -34,13 +34,15 @@ struct TextInputView: View {
                             .font(.title)
                         
                         Group {
-                            TextField("Enter Grocery Cost (Tk)", text: $azmalGrocery)
-                            TextField("Enter Unilty Cost (Tk)", text: $azmalUtility)
+                            TextField("    Enter Unilty Cost (Tk)", text: self.$azmalGrocery)
+                            TextField("    Enter Unilty Cost (Tk)", text: $azmalUtility)
                         }
                         .keyboardType(.numberPad)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .padding(.horizontal)
-                        .frame(width: 350)
+                        .frame(height: 50)
+                        .textFieldStyle(PlainTextFieldStyle())
+                        .cornerRadius(30)
+                        .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color.gray))
+                        .padding([.horizontal], 24)
                         .focused($fieldIsFocused)
                         
                         Text("Mridul")
@@ -48,14 +50,17 @@ struct TextInputView: View {
                             .font(.title)
                         
                         Group {
-                            TextField("Enter Grocery Cost (Tk)", text: $mridulGrocery)
-                            TextField("Enter Unilty Cost (Tk)", text: $mridulUtility)
+                            TextField("    Enter Grocery Cost (Tk)", text: $mridulGrocery)
+                            TextField("    Enter Unilty Cost (Tk)", text: $mridulUtility)
                         }
                         .keyboardType(.numberPad)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .padding(.horizontal)
-                        .frame(width: 350)
+                        .frame(height: 50)
+                        .textFieldStyle(PlainTextFieldStyle())
+                        .cornerRadius(30)
+                        .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color.gray))
+                        .padding([.horizontal], 24)
                         .focused($fieldIsFocused)
+
                         
                         
                         Text("Nasif")
@@ -63,8 +68,8 @@ struct TextInputView: View {
                             .font(.title)
                         
                         Group {
-                            TextField("Enter Grocery Cost (Tk)", text: $nasifGrocery)
-                            TextField("Enter Unilty Cost (Tk)", text: $nasifUtility)
+                            TextField("    Enter Grocery Cost (Tk)", text: $nasifGrocery)
+                            TextField("    Enter Unilty Cost (Tk)", text: $nasifUtility)
                                 .toolbar {
                                     ToolbarItemGroup(placement: .keyboard) {
                                         Spacer()
@@ -76,11 +81,13 @@ struct TextInputView: View {
                             
                         }
                         .keyboardType(.numberPad)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .padding(.horizontal)
-                        .frame(width: 350)
+                        .frame(height: 50)
+                        .textFieldStyle(PlainTextFieldStyle())
+                        .cornerRadius(30)
+                        .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color.gray))
+                        .padding([.horizontal], 24)
                         .focused($fieldIsFocused)
-                        
+
                         HStack{
                             
                             Button(action: {
