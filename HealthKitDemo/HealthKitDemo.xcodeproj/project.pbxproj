@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		91BA49592D2C16F200639146 /* HealthKitDemoWatch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 91BA49362D2C16F000639146 /* HealthKitDemoWatch Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		914ABF2A2D26A71B0060CE06 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -21,12 +25,50 @@
 			remoteGlobalIDString = 914ABF182D26A7190060CE06;
 			remoteInfo = HealthKitDemo;
 		};
+		91BA49462D2C16F200639146 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 914ABF112D26A7190060CE06 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 91BA49352D2C16F000639146;
+			remoteInfo = "HealthKitDemoWatch Watch App";
+		};
+		91BA49502D2C16F200639146 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 914ABF112D26A7190060CE06 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 91BA49352D2C16F000639146;
+			remoteInfo = "HealthKitDemoWatch Watch App";
+		};
+		91BA49572D2C16F200639146 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 914ABF112D26A7190060CE06 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 91BA49352D2C16F000639146;
+			remoteInfo = "HealthKitDemoWatch Watch App";
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		91BA495A2D2C16F200639146 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				91BA49592D2C16F200639146 /* HealthKitDemoWatch Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		914ABF192D26A7190060CE06 /* HealthKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HealthKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		914ABF292D26A71B0060CE06 /* HealthKitDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HealthKitDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		914ABF332D26A71B0060CE06 /* HealthKitDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HealthKitDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		91BA49362D2C16F000639146 /* HealthKitDemoWatch Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HealthKitDemoWatch Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		91BA49452D2C16F200639146 /* HealthKitDemoWatch Watch AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "HealthKitDemoWatch Watch AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		91BA494F2D2C16F200639146 /* HealthKitDemoWatch Watch AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "HealthKitDemoWatch Watch AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -43,6 +85,21 @@
 		914ABF362D26A71B0060CE06 /* HealthKitDemoUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = HealthKitDemoUITests;
+			sourceTree = "<group>";
+		};
+		91BA49372D2C16F000639146 /* HealthKitDemoWatch Watch App */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "HealthKitDemoWatch Watch App";
+			sourceTree = "<group>";
+		};
+		91BA49482D2C16F200639146 /* HealthKitDemoWatch Watch AppTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "HealthKitDemoWatch Watch AppTests";
+			sourceTree = "<group>";
+		};
+		91BA49522D2C16F200639146 /* HealthKitDemoWatch Watch AppUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "HealthKitDemoWatch Watch AppUITests";
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -69,6 +126,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		91BA49332D2C16F000639146 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		91BA49422D2C16F200639146 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		91BA494C2D2C16F200639146 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -78,6 +156,9 @@
 				914ABF1B2D26A7190060CE06 /* HealthKitDemo */,
 				914ABF2C2D26A71B0060CE06 /* HealthKitDemoTests */,
 				914ABF362D26A71B0060CE06 /* HealthKitDemoUITests */,
+				91BA49372D2C16F000639146 /* HealthKitDemoWatch Watch App */,
+				91BA49482D2C16F200639146 /* HealthKitDemoWatch Watch AppTests */,
+				91BA49522D2C16F200639146 /* HealthKitDemoWatch Watch AppUITests */,
 				914ABF1A2D26A7190060CE06 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -88,6 +169,9 @@
 				914ABF192D26A7190060CE06 /* HealthKitDemo.app */,
 				914ABF292D26A71B0060CE06 /* HealthKitDemoTests.xctest */,
 				914ABF332D26A71B0060CE06 /* HealthKitDemoUITests.xctest */,
+				91BA49362D2C16F000639146 /* HealthKitDemoWatch Watch App.app */,
+				91BA49452D2C16F200639146 /* HealthKitDemoWatch Watch AppTests.xctest */,
+				91BA494F2D2C16F200639146 /* HealthKitDemoWatch Watch AppUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -102,10 +186,12 @@
 				914ABF152D26A7190060CE06 /* Sources */,
 				914ABF162D26A7190060CE06 /* Frameworks */,
 				914ABF172D26A7190060CE06 /* Resources */,
+				91BA495A2D2C16F200639146 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				91BA49582D2C16F200639146 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				914ABF1B2D26A7190060CE06 /* HealthKitDemo */,
@@ -163,6 +249,74 @@
 			productReference = 914ABF332D26A71B0060CE06 /* HealthKitDemoUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		91BA49352D2C16F000639146 /* HealthKitDemoWatch Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 91BA49612D2C16F200639146 /* Build configuration list for PBXNativeTarget "HealthKitDemoWatch Watch App" */;
+			buildPhases = (
+				91BA49322D2C16F000639146 /* Sources */,
+				91BA49332D2C16F000639146 /* Frameworks */,
+				91BA49342D2C16F000639146 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				91BA49372D2C16F000639146 /* HealthKitDemoWatch Watch App */,
+			);
+			name = "HealthKitDemoWatch Watch App";
+			packageProductDependencies = (
+			);
+			productName = "HealthKitDemoWatch Watch App";
+			productReference = 91BA49362D2C16F000639146 /* HealthKitDemoWatch Watch App.app */;
+			productType = "com.apple.product-type.application";
+		};
+		91BA49442D2C16F200639146 /* HealthKitDemoWatch Watch AppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 91BA49622D2C16F200639146 /* Build configuration list for PBXNativeTarget "HealthKitDemoWatch Watch AppTests" */;
+			buildPhases = (
+				91BA49412D2C16F200639146 /* Sources */,
+				91BA49422D2C16F200639146 /* Frameworks */,
+				91BA49432D2C16F200639146 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				91BA49472D2C16F200639146 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				91BA49482D2C16F200639146 /* HealthKitDemoWatch Watch AppTests */,
+			);
+			name = "HealthKitDemoWatch Watch AppTests";
+			packageProductDependencies = (
+			);
+			productName = "HealthKitDemoWatch Watch AppTests";
+			productReference = 91BA49452D2C16F200639146 /* HealthKitDemoWatch Watch AppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		91BA494E2D2C16F200639146 /* HealthKitDemoWatch Watch AppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 91BA49632D2C16F200639146 /* Build configuration list for PBXNativeTarget "HealthKitDemoWatch Watch AppUITests" */;
+			buildPhases = (
+				91BA494B2D2C16F200639146 /* Sources */,
+				91BA494C2D2C16F200639146 /* Frameworks */,
+				91BA494D2D2C16F200639146 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				91BA49512D2C16F200639146 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				91BA49522D2C16F200639146 /* HealthKitDemoWatch Watch AppUITests */,
+			);
+			name = "HealthKitDemoWatch Watch AppUITests";
+			packageProductDependencies = (
+			);
+			productName = "HealthKitDemoWatch Watch AppUITests";
+			productReference = 91BA494F2D2C16F200639146 /* HealthKitDemoWatch Watch AppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -184,6 +338,17 @@
 						CreatedOnToolsVersion = 16.0;
 						TestTargetID = 914ABF182D26A7190060CE06;
 					};
+					91BA49352D2C16F000639146 = {
+						CreatedOnToolsVersion = 16.0;
+					};
+					91BA49442D2C16F200639146 = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = 91BA49352D2C16F000639146;
+					};
+					91BA494E2D2C16F200639146 = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = 91BA49352D2C16F000639146;
+					};
 				};
 			};
 			buildConfigurationList = 914ABF142D26A7190060CE06 /* Build configuration list for PBXProject "HealthKitDemo" */;
@@ -203,6 +368,9 @@
 				914ABF182D26A7190060CE06 /* HealthKitDemo */,
 				914ABF282D26A71B0060CE06 /* HealthKitDemoTests */,
 				914ABF322D26A71B0060CE06 /* HealthKitDemoUITests */,
+				91BA49352D2C16F000639146 /* HealthKitDemoWatch Watch App */,
+				91BA49442D2C16F200639146 /* HealthKitDemoWatch Watch AppTests */,
+				91BA494E2D2C16F200639146 /* HealthKitDemoWatch Watch AppUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -223,6 +391,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		914ABF312D26A71B0060CE06 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		91BA49342D2C16F000639146 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		91BA49432D2C16F200639146 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		91BA494D2D2C16F200639146 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -253,6 +442,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		91BA49322D2C16F000639146 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		91BA49412D2C16F200639146 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		91BA494B2D2C16F200639146 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -265,6 +475,21 @@
 			isa = PBXTargetDependency;
 			target = 914ABF182D26A7190060CE06 /* HealthKitDemo */;
 			targetProxy = 914ABF342D26A71B0060CE06 /* PBXContainerItemProxy */;
+		};
+		91BA49472D2C16F200639146 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 91BA49352D2C16F000639146 /* HealthKitDemoWatch Watch App */;
+			targetProxy = 91BA49462D2C16F200639146 /* PBXContainerItemProxy */;
+		};
+		91BA49512D2C16F200639146 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 91BA49352D2C16F000639146 /* HealthKitDemoWatch Watch App */;
+			targetProxy = 91BA49502D2C16F200639146 /* PBXContainerItemProxy */;
+		};
+		91BA49582D2C16F200639146 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 91BA49352D2C16F000639146 /* HealthKitDemoWatch Watch App */;
+			targetProxy = 91BA49572D2C16F200639146 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -458,7 +683,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = BD7Y2B4ZKU;
+				DEVELOPMENT_TEAM = 345FY7Y564;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				MARKETING_VERSION = 1.0;
@@ -477,7 +702,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = BD7Y2B4ZKU;
+				DEVELOPMENT_TEAM = 345FY7Y564;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				MARKETING_VERSION = 1.0;
@@ -495,7 +720,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = BD7Y2B4ZKU;
+				DEVELOPMENT_TEAM = 345FY7Y564;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = azmal.HealthKitDemoUITests;
@@ -512,7 +737,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = BD7Y2B4ZKU;
+				DEVELOPMENT_TEAM = 345FY7Y564;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = azmal.HealthKitDemoUITests;
@@ -521,6 +746,146 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = HealthKitDemo;
+			};
+			name = Release;
+		};
+		91BA495B2D2C16F200639146 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "HealthKitDemoWatch Watch App/HealthKitDemoWatch Watch App.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"HealthKitDemoWatch Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = 345FY7Y564;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = HealthKitDemoWatch;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = azmal.HealthKitDemo;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = azmal.HealthKitDemo.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 11.0;
+			};
+			name = Debug;
+		};
+		91BA495C2D2C16F200639146 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "HealthKitDemoWatch Watch App/HealthKitDemoWatch Watch App.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"HealthKitDemoWatch Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = 345FY7Y564;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = HealthKitDemoWatch;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = azmal.HealthKitDemo;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = azmal.HealthKitDemo.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 11.0;
+			};
+			name = Release;
+		};
+		91BA495D2D2C16F200639146 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 345FY7Y564;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "azmal.HealthKitDemoWatch-Watch-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HealthKitDemoWatch Watch App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/HealthKitDemoWatch Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 11.0;
+			};
+			name = Debug;
+		};
+		91BA495E2D2C16F200639146 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 345FY7Y564;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "azmal.HealthKitDemoWatch-Watch-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HealthKitDemoWatch Watch App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/HealthKitDemoWatch Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 11.0;
+			};
+			name = Release;
+		};
+		91BA495F2D2C16F200639146 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 345FY7Y564;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "azmal.HealthKitDemoWatch-Watch-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = "HealthKitDemoWatch Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 11.0;
+			};
+			name = Debug;
+		};
+		91BA49602D2C16F200639146 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 345FY7Y564;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "azmal.HealthKitDemoWatch-Watch-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = "HealthKitDemoWatch Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 11.0;
 			};
 			name = Release;
 		};
@@ -559,6 +924,33 @@
 			buildConfigurations = (
 				914ABF442D26A71B0060CE06 /* Debug */,
 				914ABF452D26A71B0060CE06 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		91BA49612D2C16F200639146 /* Build configuration list for PBXNativeTarget "HealthKitDemoWatch Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				91BA495B2D2C16F200639146 /* Debug */,
+				91BA495C2D2C16F200639146 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		91BA49622D2C16F200639146 /* Build configuration list for PBXNativeTarget "HealthKitDemoWatch Watch AppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				91BA495D2D2C16F200639146 /* Debug */,
+				91BA495E2D2C16F200639146 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		91BA49632D2C16F200639146 /* Build configuration list for PBXNativeTarget "HealthKitDemoWatch Watch AppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				91BA495F2D2C16F200639146 /* Debug */,
+				91BA49602D2C16F200639146 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

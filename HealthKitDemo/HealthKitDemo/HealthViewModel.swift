@@ -5,46 +5,57 @@
 //  Created by MMH on 3/1/25.
 //
 
-import Foundation
+import SwiftUI
+import Combine
+import WatchConnectivity
 
-final class HealthViewModel: ObservableObject {
-    private let healthManager = HealthManager()
+class HealthViewModel: NSObject, ObservableObject, WCSessionDelegate {
+    static let shared = HealthViewModel()
+    @Published var realTimeHeartRate: Double = 0
     
-    @Published var stepCount: Double = 0
-    @Published var caloriesBurned: Double = 0
-    @Published var currentHeartRate: Double = 0
-    @Published var restingHeartRate: Double = 0
+    private var healthManager = HealthManager()
     
     func requestAuthorization() {
-        healthManager.requestAuthorization { [weak self] success in
-            guard success else { return }
-            self?.fetchHealthData()
+        healthManager.requestAuthorization { success in
+            if !success {
+                print("Failed to authorize HealthKit.")
+            }
         }
     }
     
-    private func fetchHealthData() {
-        healthManager.fetchStepCount { [weak self] steps in
+    func session(_ session: WCSession, didReceiveMessage message: [String: Any]) {
+        if let heartRate = message["heartRate"] as? Double {
             DispatchQueue.main.async {
-                self?.stepCount = steps
+                self.realTimeHeartRate = heartRate
             }
         }
-        
-        healthManager.fetchCaloriesBurned { [weak self] calories in
-            DispatchQueue.main.async {
-                self?.caloriesBurned = calories
-            }
+    }
+    
+    func setupWatchConnectivity() {
+        if WCSession.isSupported() {
+            let session = WCSession.default
+            session.delegate = self
+            session.activate()
         }
-        
-        healthManager.fetchCurrentHeartRate { [weak self] heartRate in
-            DispatchQueue.main.async {
-                self?.currentHeartRate = heartRate ?? 0
-            }
-        }
-        
-        healthManager.fetchRestingHeartRate { [weak self] restingRate in
-            DispatchQueue.main.async {
-                self?.restingHeartRate = restingRate ?? 0
-            }
+    }
+    
+    // MARK: - WCSessionDelegate Protocol Stubs
+    
+    func sessionDidBecomeInactive(_ session: WCSession) {
+        // This method is required but can be left empty
+    }
+    
+    func sessionDidDeactivate(_ session: WCSession) {
+        // This method is required but can be left empty
+        // You can also call session.activate() if needed
+        WCSession.default.activate()
+    }
+    
+    func session(_ session: WCSession, activationDidCompleteWith state: WCSessionActivationState, error: Error?) {
+        if let error = error {
+            print("WCSession activation failed with error: \(error.localizedDescription)")
+        } else {
+            print("WCSession activated with state: \(state.rawValue)")
         }
     }
 }

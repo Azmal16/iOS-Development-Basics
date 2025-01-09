@@ -8,22 +8,33 @@
 import SwiftUI
 import HealthKit
 
+
 struct ContentView: View {
-    @StateObject private var viewModel = HealthViewModel()
-    
+    @StateObject private var viewModel = HealthViewModel.shared
+
     var body: some View {
         VStack(spacing: 20) {
-            Text("Health Data")
+            Text("Real-Time Heart Rate")
                 .font(.largeTitle)
-            
-            Text("Steps: \(Int(viewModel.stepCount))")
-            Text("Calories Burned: \(Int(viewModel.caloriesBurned)) kCal")
-            Text("Current Heart Rate: \(Int(viewModel.currentHeartRate)) bpm")
-            Text("Resting Heart Rate: \(Int(viewModel.restingHeartRate)) bpm")
+
+            Text("\(viewModel.realTimeHeartRate, specifier: "%.1f") bpm")
+                .font(.title)
+
+//            Button(action: {
+//                // Placeholder for future functionality
+//            }) {
+//                Text("Health Data")
+//                    .font(.headline)
+//                    .foregroundColor(.white)
+//                    .padding()
+//                    .background(Color.blue)
+//                    .cornerRadius(10)
+//            }
         }
         .padding()
         .onAppear {
             viewModel.requestAuthorization()
+            viewModel.setupWatchConnectivity()
         }
     }
 }
